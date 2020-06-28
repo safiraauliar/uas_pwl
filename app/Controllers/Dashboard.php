@@ -1,6 +1,8 @@
-<?php namespace App\Controllers;
+<?php
 
-class Home extends BaseController
+namespace App\Controllers;
+
+class Dashboard extends BaseController
 {
 	public function index()
 	{
@@ -9,7 +11,7 @@ class Home extends BaseController
 			'content' => 'dashboard'
 
 		];
-		echo view('layouts/wrapper',$data);
+		echo view('layouts/wrapper', $data);
 	}
 
 	//--------------------------------------------------------------------

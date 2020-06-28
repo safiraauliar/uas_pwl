@@ -6,7 +6,7 @@ use CodeIgniter\Controller;
 use App\Models\AuthModel;
 
 
-class Auth extends BaseController
+class Admin extends BaseController
 {
     protected $model;
     public function __construct()
