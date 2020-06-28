@@ -1,0 +1,106 @@
+<div class="content-wrapper">
+    <section class="content">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title"> <?= $title; ?></h3>
+
+                    </div>
+                    <div class="card-body">
+                        <form action="<?= base_url('penduduk/update/' . $penduduk['nik']); ?>" method="post">
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-md-2">
+                                        <label for="nik">NIK</label>
+                                    </div>
+                                    <div class="col-md-10">
+                                        <input type="text" class="form-control" name="nik" value="<?= $penduduk['nik'] ?>" id="nik" placeholder="Nomor Induk Keluarga" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-md-2">
+                                        <label for="nama">Nama Lengkap</label>
+                                    </div>
+                                    <div class="col-md-10">
+                                        <input type="text" class="form-control" name="nama" value="<?= $penduduk['nama'] ?>" id="nama" placeholder="Nama Lengkap" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-md-2">
+                                        <label for="temp_tgl_lahir">Tempat/Tanggal lahir</label>
+                                    </div>
+                                    <div class="col-md-10">
+                                        <input type="text" class="form-control" name="temp_tgl_lahir" value="<?= $penduduk['temp_tgl_lahir'] ?>" id="temp_tgl_lahir" placeholder="ex ; Grobogan, 15 Juli 2000" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-md-2">
+                                        <label for="jen_kel">Jenis Kelamin</label>
+                                    </div>
+                                    <div class="col-md-10">
+                                        <input type="text" class="form-control" name="jen_kel" value="<?= $penduduk['jen_kel'] ?>" id="jen_kel" placeholder="Jenis Kelamin" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-md-2">
+                                        <label for="alamat">Alamat</label>
+                                    </div>
+                                    <div class="col-md-10">
+                                        <input type="text" class="form-control" name="alamat" value="<?= $penduduk['alamat'] ?>" id="alamat" placeholder="Manggarwetan RT001/RW001, Godong" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-md-2">
+                                        <label for="agama">Agama</label>
+                                    </div>
+                                    <div class="col-md-10">
+                                        <input type="text" class="form-control" name="agama" value="<?= $penduduk['agama'] ?>" id="agama" placeholder="Agama" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-md-2">
+                                        <label for="status">Status Perkawinan</label>
+                                    </div>
+                                    <div class="col-md-10">
+                                        <input type="text" class="form-control" name="status" value="<?= $penduduk['status'] ?>" id="status" placeholder="ex : Belum Kawin" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-md-2">
+                                        <label for="pekerjaan">Pekerjaan</label>
+                                    </div>
+                                    <div class="col-md-10">
+                                        <input type="text" class="form-control" name="pekerjaan" value="<?= $penduduk['pekerjaan'] ?>" id="pekerjaan" placeholder="Pekerjaan" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-md-2">
+                                    </div>
+                                    <div class="col-md-10">
+                                        <button type="submit" class="btn btn-primary">Submit</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+    </section>
+</div>
