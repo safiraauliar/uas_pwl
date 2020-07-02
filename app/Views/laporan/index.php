@@ -9,7 +9,7 @@
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item active">Artikel</li>
+                        <li class="breadcrumb-item active">Berita</li>
                     </ol>
                 </div>
             </div>
@@ -17,15 +17,7 @@
     </section>
 
     <section class="content">
-        <div class="container-fluid">
-            <div class="row mb-2">
-                <div class="col-sm-12 float-sm-right">
-                    <div class="float-sm-right">
-                        <a href="<?= base_url('berita/tambah') ?>" class="btn btn-primary"> <i class="fa fa-plus"></i> Tambah</a>
-                    </div>
-                </div>
-            </div>
-        </div>
+
         <div class="card">
             <?php
             if (!empty(session()->getFlashdata('success'))) { ?>
@@ -42,24 +34,21 @@
                     <thead>
                         <tr>
                             <th>No</th>
-                            <th>Judul</th>
-                            <th>Isi</th>
-                            <th>Tanggal Upload</th>
-                            <th>Gambar</th>
+                            <th>nama</th>
+                            <th>Isi Laporan</th>
+                            <th>Tanggal lapor</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php $no = 1;
-                        foreach ($berita as $key => $data) { ?>
+                        foreach ($laporan as $key => $data) { ?>
                             <td><?= $no++; ?></td>
-                            <td><?= $data['judul'] ?></td>
-                            <td><?= $data['isi'] ?></td>
-                            <td><?= $data['tanggal_upload'] ?></td>
-                            <td><img src="<?= base_url('Berita_img/' . $data['gambar']); ?>" alt="" width="200px"></td>
+                            <td><?= $data['nama'] ?></td>
+                            <td><?= $data['isi_laporan'] ?></td>
+                            <td><?= $data['tgl_lapor'] ?></td>
                             <td>
-                                <a href="<?= base_url('berita/edit/' . $data['id']) ?>" class="btn btn-warning btn-xs"><i class="fa fa-edit"></i></a>
-                                <a href="<?= base_url('berita/delete/' . $data['id']) ?>" class="btn btn-danger btn-xs" onClick="return confirm('Apakah anda yakin ingin menghapus data?')"><i class="fa fa-trash"></i></a>
+                                <a href="<?= base_url('laporan/delete/' . $data['id']) ?>" class="btn btn-danger btn-xs" onClick="return confirm('Apakah anda yakin ingin menghapus data?')"><i class="fa fa-trash"></i></a>
                             </td>
                             </tr>
                         <?php } ?>

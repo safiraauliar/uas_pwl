@@ -15,8 +15,12 @@ class Berita extends BaseController
     }
     public function index()
     {
+        if (session()->get('email') == '') {
+            session()->setFlashdata('gagal', 'anda belum login');
+            return redirect()->to(base_url('loginadmin'));
+        }
         $data = [
-            'title' => 'Tabel Data Berita',
+            'title' => 'Tabel Data Artikel',
             'berita' => $this->model->get_berita(),
             'validation' => $this->validator,
             'content' => 'berita/index'
@@ -26,7 +30,7 @@ class Berita extends BaseController
     public function tambah()
     {
         $data = [
-            'title' => 'Tambah Data Berita',
+            'title' => 'Tambah Data Artikel',
             'content' => 'berita/create'
         ];
         echo view('layouts/wrapper', $data);
@@ -58,7 +62,7 @@ class Berita extends BaseController
     public function edit($id)
     {
         $data = [
-            'title' => 'Edit Data Berita',
+            'title' => 'Edit Data Artikel',
             'berita' => $this->model->edit_berita($id),
             'content' => 'berita/edit'
         ];

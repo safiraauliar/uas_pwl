@@ -8,55 +8,64 @@
                     </div>
 
                     <div class="card-body">
-                        <?= form_open_multipart(base_url('berita/update/' . $berita['id'])); ?>
+                        <?= form_open_multipart(base_url('admin/save')); ?>
                         <div class="form-group">
                             <div class="row">
                                 <div class="col-md-2">
-                                    <label for="judul">Judul Berita</label>
+                                    <label for="fullname">Nama Lengkap</label>
                                 </div>
                                 <div class="col-md-10">
-                                    <input type="text" class="form-control" name="judul" id="judul" value="<?= $berita['judul'] ?>" required>
+                                    <input type="text" class="form-control" name="fullname" value="<?= $users['fullname'] ?>" id="fullname" required>
                                 </div>
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="row">
                                 <div class="col-md-2">
-                                    <label for="isi">Isi Berita</label>
+                                    <label for="email">Email</label>
                                 </div>
                                 <div class="col-md-10">
-                                    <textarea type="text" class="form-control" name="isi" id="isi" rows="5" cols="50" required></textarea>
+                                    <input type="text" class="form-control" name="email" value="<?= $users['email'] ?>" id="email" required></input>
                                 </div>
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="row">
                                 <div class="col-md-2">
-                                    <label for="tanggal_ipload">Tanggal Upload</label>
+                                    <label for="password">Password</label>
                                 </div>
                                 <div class="col-md-10">
-                                    <input type="text" class="form-control" name="tanggal_ipload" value="<?= $berita['tanggal_upload'] ?>" id="tanggal_ipload" required>
+                                    <input type="password" class="form-control" name="password" value="<?= $users['password'] ?>" id="password" required></input>
                                 </div>
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="row">
                                 <div class="col-md-2">
-                                    <label for="gambar">Gambar/Foto</label>
+                                    <label for="photo">Gambar/Foto</label>
                                 </div>
                                 <div class="col-md-10">
-                                    <input type="file" class="form-control" name="gambar" value="<?= $berita['gambar'] ?>" id="gambar" required>
+                                    <input type="file" class="form-control" name="photo" id="photo" required>
                                 </div>
                             </div>
                         </div>
-
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <label for="level">Level</label>
+                                </div>
+                                <div class="col-md-10">
+                                    <input type="text" class="form-control" name="level" value="<?= $users['level'] ?>" id="level" required></input>
+                                </div>
+                            </div>
+                        </div>
                         <div class="form-group">
                             <div class="row">
                                 <div class="col-md-2">
                                 </div>
                                 <div class="col-md-10">
-                                    <button type="submit" class="btn btn-primary">Update</button>
-                                    <a href="<?= base_url('berita/index') ?>" id="cancel" name="cancel" class="btn btn-default">Cancel</a>
+                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                    <a href="<?= base_url('admin/index') ?>" id="cancel" name="cancel" class="btn btn-default">Cancel</a>
                                 </div>
                             </div>
                         </div>

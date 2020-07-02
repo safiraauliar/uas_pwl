@@ -47,15 +47,15 @@
 
                 <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="">Data Desa <i class='fa fa-angle-down'></i></a>
                     <ul class="dropdown-menu">
-                        <li><a href="">Data Pendidikan dalam KK</a></li>
-                        <li><a href="">Data Pendidikan Ditempuh</a></li>
-                        <li><a href="">Data Pekerjaan</a></li>
-                        <li><a href="">Data Jenis Kelamin</a></li>
-                        <li><a href="">Data Kelompok Umur</a></li>
-                        <li><a href="">Data Perkawinan</a></li>
+                        <li><a href="">Data Penduduk</a></li>
+                        <li><a href="#">Data Pendidikan Ditempuh</a></li>
+                        <li><a href="#">Data Pekerjaan</a></li>
+                        <li><a href="#">Data Jenis Kelamin</a></li>
+                        <li><a href="#">Data Kelompok Umur</a></li>
+                        <li><a href="#">Data Perkawinan</a></li>
                     </ul>
                 </li>
-                <li class='$item[status]'><a href="">Surat Online</a></li>
+                <li class='$item[status]'><a href="<?= base_url('loginadmin/user') ?>">Login Penduduk</a></li>
                 <li class='hidden-xs'><a href='javascript:void(0)' id='btnSearch' class=""><i class='fa fa-search'></i></a></li>
             </ul>
 

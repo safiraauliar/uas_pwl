@@ -18,6 +18,10 @@ class Penduduk extends BaseController
     }
     public function index()
     {
+        if (session()->get('email') == '') {
+            session()->setFlashdata('gagal', 'anda belum login');
+            return redirect()->to(base_url('loginadmin'));
+        }
         $data = [
             'title' => 'List Data Penduduk',
             'penduduk' => $this->model->get_penduduk(),

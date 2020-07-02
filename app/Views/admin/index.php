@@ -4,12 +4,12 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>Penduduk</h1>
+                    <h1>Admin</h1>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item active">Penduduk</li>
+                        <li class="breadcrumb-item active">Admin</li>
                     </ol>
                 </div>
             </div>
@@ -23,14 +23,8 @@
                     <h3 class="card-title"><?= $title; ?></h3>
                 </div>
                 <div class="col-sm-6 float-sm-right">
-                    <div class="float-sm-right ml-2">
-                        <a href="<?= base_url('penduduk/tambah') ?>" class="btn btn-primary"> <i class="fa fa-plus"></i> Tambah</a>
-                    </div>
-                    <div class="float-sm-right ml-2">
-                        <a href="<?= base_url('penduduk/pdf') ?>" class="btn btn-danger"><i class="fa fa-print"></i>PDF</a>
-                    </div>
                     <div class="float-sm-right">
-                        <a href="<?= base_url('penduduk/excel') ?>" class="btn btn-success"><i class="fa fa-file-excel"></i> Excel</a>
+                        <a href="<?= base_url('admin/tambah') ?>" class="btn btn-primary">Tambah</a><br></br>
                     </div>
                 </div>
             </div>
@@ -51,33 +45,25 @@
                     <thead>
                         <tr>
                             <th>No</th>
-                            <th>NIK</th>
                             <th>Nama</th>
-                            <th>TTL</th>
-                            <th>Jenis Kelamin</th>
-                            <th>Alamat</th>
-                            <th>Agama</th>
-                            <th>Status</th>
-                            <th>Pekerjaan</th>
+                            <th>email</th>
+                            <th>Foto</th>
+                            <th>level</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php $no = 1;
-                        foreach ($penduduk as $key => $data) { ?>
+                        foreach ($users as $key => $data) { ?>
                             <td><?= $no++; ?></td>
-                            <td><?= $data['nik'] ?></td>
-                            <td><?= $data['nama'] ?></td>
-                            <td><?= $data['temp_tgl_lahir'] ?></td>
-                            <td><?= $data['jen_kel'] ?></td>
-                            <td><?= $data['alamat'] ?></td>
-                            <td><?= $data['agama'] ?></td>
-                            <td><?= $data['status'] ?></td>
-                            <td><?= $data['pekerjaan'] ?></td>
+                            <td><?= $data['fullname'] ?></td>
+                            <td><?= $data['email'] ?></td>
+                            <td><img src="<?= base_url('admin_photo/' . $data['photo']); ?>" alt="" width="100px"></td>
+                            <td><?= $data['level'] ?></td>
 
                             <td>
-                                <a href="<?= base_url('penduduk/edit/' . $data['nik']) ?>" class="btn btn-warning btn-xs"><i class="fa fa-edit"></i></a>
-                                <a href="<?= base_url('penduduk/delete/' . $data['nik']) ?>" class="btn btn-danger btn-xs" onClick="return confirm('Apakah anda yakin ingin menghapus data?')"><i class="fa fa-trash"></i></a>
+                                <a href="<?= base_url('admin/edit/' . $data['id']) ?>" class="btn btn-warning btn-xs"><i class="fa fa-edit"></i></a>
+                                <a href="<?= base_url('admin/delete/' . $data['id']) ?>" class="btn btn-danger btn-xs" onClick="return confirm('Apakah anda yakin ingin menghapus data?')"><i class="fa fa-trash"></i></a>
                             </td>
                             </tr>
                         <?php } ?>

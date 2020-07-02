@@ -13,4 +13,22 @@ class Beranda extends BaseController
         ];
         echo view('frontend_layouts/wrapper', $data);
     }
+    public function sejarah()
+    {
+        $data = [
+            'title' => 'Sejarah Desa Konohagakure',
+            'content' => 'beranda/sejarah'
+
+        ];
+        echo view('frontend_layouts/wrapper', $data);
+    }
+    public function surat()
+    {
+        $data = [
+            'title' => 'Sejarah Desa Konohagakure',
+            'content' => 'kelola_surat/surat'
+
+        ];
+        echo view('kelola_surat/surat', $data);
+    }
 }
