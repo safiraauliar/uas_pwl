@@ -29,6 +29,16 @@ class Penduduk extends BaseController
         ];
         echo view('layouts/wrapper', $data);
     }
+    public function data_penduduk()
+    {
+
+        $data = [
+            'title' => ' Data Penduduk Desa Konohagakure',
+            'penduduk' => $this->model->get_penduduk(),
+            'content' => 'beranda/data_penduduk'
+        ];
+        echo view('frontend_layouts/wrapper', $data);
+    }
     public function tambah()
     {
         $data = [

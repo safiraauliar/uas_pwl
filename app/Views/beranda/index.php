@@ -122,7 +122,7 @@
 							&nbsp;&nbsp;
 							Kepala Desa bertugas menyelenggarakan Pemerintahan Desa, melaksanakan pembangunan, pembinaan kemasyarakatan, dan pemberdayaan masyarakat. Untuk melaksanakan tugas Kepala Desa memiliki fungsi-fungsi sebagai berikut:
 
-							Menyelenggarakan Pemerintahan Desa, seperti tata praja <a href=''>..selengkapnya</a></div>
+							Menyelenggarakan Pemerintahan Desa, seperti tata praja <a href='<?= base_url('berita/pemerintah_desa') ?>'>..selengkapnya</a></div>
 					</div>
 				</div>
 
@@ -144,7 +144,7 @@
 									<img src='<?= base_url(); ?>/lte/dist/img/konoha.jpg' alt='Selamat Datang di Website Resmi Desa Sekartaji' />
 								</div>
 							</div>
-							<div class='artikel-konten'>Selamat Datang di Website Resmi Desa Konohagakure , Kabupaten Grobogan. Media komunikasi dan transparansi Pemerintah Desa Konohagakure untuk seluruh masyarakat. <a href=''>..selengkapnya</a></div>
+							<div class='artikel-konten'>Selamat Datang di Website Resmi Desa Konohagakure , Kabupaten Grobogan. Media komunikasi dan transparansi Pemerintah Desa Konohagakure untuk seluruh masyarakat. <a href='<?= base_url('berita/selamat_datang') ?>'>..selengkapnya</a></div>
 						</div>
 					</div>
 
@@ -169,7 +169,7 @@
 								Nama Konohagakure no Sato
 								Harfiah Desa Disembunyikan oleh Dedaunan Pohon
 								Data Desa Negara Negara Api
-								PemimpinHokage Simbol Konohagakure Symbol Statistik Populasi 5/5 Militer 3/5 Ekonomi 2/5Konohagakure, Konohagakure no Sato; Secara harfiah berarti "Desa Tersembunyi oleh Daun Pohon", juga dikenal sebagai "Desa Tersem <a href='<?= base_url('beranda/sejarah') ?>'>..selengkapnya</a></div>
+								PemimpinHokage Simbol Konohagakure Symbol Statistik Populasi 5/5 Militer 3/5 Ekonomi 2/5Konohagakure, Konohagakure no Sato; Secara harfiah berarti "Desa Tersembunyi oleh Daun Pohon", juga dikenal sebagai "Desa Tersem <a href='<?= base_url('berita/sejarah') ?>'>..selengkapnya</a></div>
 						</div>
 					</div>
 
@@ -187,44 +187,7 @@
 								</div>
 							</div>
 							<div class='artikel-konten'>Berikut ini Profil Wilayah Desa Sekartaji
-								1. Luas Wilayah
-
-
-
-
-								Luas pemukiman
-
-
-								47,5&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;.ha/m2
-
-
-
-
-								Luas persawahan
-
-
-								&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;.ha/m2
-
-
-
-
-								Luas perkebunan
-
-
-								200,5&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;.ha/m2
-
-
-
-
-								Luas kuburan
-
-
-								6,5&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;.ha/m2
-
-
-
-
-								Luas <a href=''>..selengkapnya</a></div>
+								<a href='<?= base_url('berita/profil_wilayah') ?>'>..selengkapnya</a></div>
 						</div>
 					</div>
 
@@ -241,13 +204,13 @@
 									<img src='<?= base_url(); ?>/lte/dist/img/visimisi.png' alt='Visi dan Misi' />
 								</div>
 							</div>
-							<div class='artikel-konten'>VISI MISI DESA SEKARTAJI
+							<div class='artikel-konten'>VISI MISI DESA KONOHAGAKURE
 								&nbsp;Visi&nbsp;
 								Visi Desa Sekartaji tahun 2015-2021 : "Terwujudnya Desa Sekartaji yang Aman, Damai dan Sejahtera".
 								&nbsp;
 								Misi
 								Misi Pembangunan Desa Sekartaji:
-								&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <a href='https://sekartaji.desa.id/first/artikel/93'>..selengkapnya</a></div>
+								<a href='<?= base_url('berita/visimisi') ?>'>..selengkapnya</a></div>
 						</div>
 					</div>
 
@@ -256,7 +219,7 @@
 				<div>
 					<ul class='pagination'>
 						<li><a href="" title='Halaman Pertama'>&laquo;</a></li>
-						<li class='active'><a href="https://sekartaji.desa.id/first/index/1" title='Halaman 1'>1</a></li>
+						<li class='active'><a href="" title='Halaman 1'>1</a></li>
 						<li><a href="" title='Halaman 2'>2</a></li>
 						<li><a href="" title='Halaman 3'>3</a></li>
 						<li><a href="" title='Halaman Selanjutnya'>&rarr;</a></li>
@@ -336,26 +299,6 @@
 						</div>
 						<div class='col-sm-6 col-md-12'>
 							<!-- widget Menu-->
-
-							<div class="box box-primary box-solid">
-								<div class="box-header">
-									<h3 class="box-title"><i class="fa fa-bars"></i> Kategori</h3>
-								</div>
-								<div class="box-body">
-									<ul id="ul-menu" class="main">
-										<li><a href="">Berita Desa</a>
-										</li>
-										<li><a href="">Agenda Desa</a>
-										</li>
-										<li><a href="">Peraturan Desa</a>
-										</li>
-										</li>
-										</li>
-									</ul>
-								</div>
-							</div>
-
-							<div class='mb20'></div>
 						</div>
 						<div class='clearfix visible-sm'></div>
 						<div class='col-sm-6 col-md-12'>
@@ -363,15 +306,15 @@
 
 							<div class="box box-primary box-solid">
 								<div class="box-header">
-									<h3 class="box-title"><a href=""><i class="fa fa-archive"></i> Arsip Artikel</a></h3>
+									<h3 class="box-title"><a href="">Arsip Artikel</a></h3>
 								</div>
 								<div class="box-body">
-									<ul id="ul-menu">
-										<li><a href="">Selamat Datang di Website Resmi Desa Sekartaji</a></li>
-										<li><a href="">Sejarah Desa Sekartaji</a></li>
-										<li><a href="">Profil Wilayah Desa Sekartaji</a></li>
-										<li><a href="">Visi dan Misi</a></li>
-										<li><a href="">Pemerintah Desa</a></li>
+									<ul>
+										<li><a href="<?= base_url('beranda') ?>"><i class="icon ion-link"> Selamat Datang di Website Resmi Desa Konohagakure</i></a></li>
+										<li><a href="<?= base_url('berita/sejarah') ?>"><i class="icon ion-link"> Sejarah Desa Konohagakure</i></a></li>
+										<li><a href="<?= base_url('berita/profil_wilayah') ?>"><i class="icon ion-link"> Profil Wilayah Desa Konohagakure</i></a></li>
+										<li><a href="<?= base_url('berita/visimisi') ?>"><i class="icon ion-link"> Visi dan Misi</i></a></li>
+										<li><a href="<?= base_url('berita/pemerintah_desa') ?>"><i class="icon ion-link"> Pemerintah Desa</i></a></li>
 									</ul>
 								</div>
 							</div>

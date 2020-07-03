@@ -13,6 +13,7 @@
     <title><?= $title; ?></title>
     <link rel="stylesheet" href="<?= base_url(); ?>/lte/plugins/fontawesome-free/css/all.min.css">
     <link rel="shortcut icon" href="<?= base_url(); ?>/lte/dist/img/konohalogo.png" />
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <link type='text/css' href="https://sekartaji.desa.id/assets/bootstrap/css/bootstrap.min.css" rel='stylesheet' />
     <link type='text/css' href='https://sekartaji.desa.id/desa/themes/batudaa/vendor/fancybox/jquery.fancybox.css' rel='stylesheet' />
     <link type='text/css' href='https://sekartaji.desa.id/desa/themes/batudaa/assets/css/batudaa.css' rel='stylesheet' />

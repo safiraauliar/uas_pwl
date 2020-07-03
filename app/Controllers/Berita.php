@@ -15,10 +15,6 @@ class Berita extends BaseController
     }
     public function index()
     {
-        if (session()->get('email') == '') {
-            session()->setFlashdata('gagal', 'anda belum login');
-            return redirect()->to(base_url('loginadmin'));
-        }
         $data = [
             'title' => 'Tabel Data Artikel',
             'berita' => $this->model->get_berita(),
@@ -98,5 +94,61 @@ class Berita extends BaseController
         $this->model->delete_berita($id);
         session()->setFlashdata('success', 'Data Berita berhasil dihapus');
         return redirect()->to(base_url('berita'));
+    }
+    public function sejarah()
+    {
+        $data = [
+            'title' => 'Sejarah Desa Konohagakure',
+            'berita' => $this->model->get_berita(),
+            'content' => 'beranda/sejarah'
+
+        ];
+        echo view('frontend_layouts/wrapper', $data);
+    }
+    public function visimisi()
+    {
+        $data = [
+            'title' => 'Visi Misi Desa Konohagakure',
+            // 'berita' => $this->model->get_berita(),
+            'content' => 'beranda/visimisi'
+
+        ];
+        echo view('frontend_layouts/wrapper', $data);
+    }
+    public function profil_wilayah()
+    {
+        $data = [
+            'title' => 'Profil Wilayah Desa Konohagakure',
+            'content' => 'beranda/profil_wilayah_desa'
+
+        ];
+        echo view('frontend_layouts/wrapper', $data);
+    }
+    public function lambang_desa()
+    {
+        $data = [
+            'title' => 'Arti Lambang Desa Konohagakure',
+            'content' => 'beranda/arti_lambang_desa'
+
+        ];
+        echo view('frontend_layouts/wrapper', $data);
+    }
+    public function pemerintah_desa()
+    {
+        $data = [
+            'title' => 'Pemerintah Desa Konohagakure',
+            'content' => 'beranda/pemerintah_desa'
+
+        ];
+        echo view('frontend_layouts/wrapper', $data);
+    }
+    public function selamat_datang()
+    {
+        $data = [
+            'title' => 'Selamat Datang di Desa Konohagakure',
+            'content' => 'beranda/welcome'
+
+        ];
+        echo view('frontend_layouts/wrapper', $data);
     }
 }

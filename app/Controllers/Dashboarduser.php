@@ -11,8 +11,8 @@ class Dashboarduser extends BaseController
             return redirect()->to(base_url('loginadmin/user'));
         }
         $data = [
-            'title' => 'Halaman Dashboard User',
-            'content' => 'dashboard'
+            'title' => 'Profil User',
+            'content' => 'dashboard_user'
 
         ];
         echo view('layouts/wrapper_user', $data);

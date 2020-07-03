@@ -33,28 +33,18 @@
             <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="">Profil Desa <i class='fa fa-angle-down'></i></a>
                     <ul class="dropdown-menu">
-                        <li><a href="">Sejarah Desa</a></li>
-                        <li><a href="">Profil Wilayah Desa</a></li>
-                        <li><a href="">Arti Lambang Desa</a></li>
+                        <li><a href="<?= base_url('berita/sejarah') ?>">Sejarah Desa</a></li>
+                        <li><a href="<?= base_url('berita/profil_wilayah') ?>">Profil Wilayah Desa</a></li>
+                        <li><a href="<?= base_url('berita/lambang_desa') ?>">Arti Lambang Desa</a></li>
                     </ul>
                 </li>
                 <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="">Pemerintahan Desa <i class='fa fa-angle-down'></i></a>
                     <ul class="dropdown-menu">
-                        <li><a href="">Visi dan Misi</a></li>
-                        <li><a href="">Pemerintah Desa</a></li>
+                        <li><a href="<?= base_url('berita/visimisi') ?>">Visi dan Misi</a></li>
+                        <li><a href="<?= base_url('berita/pemerintah_desa') ?>">Pemerintah Desa</a></li>
                     </ul>
                 </li>
-
-                <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="">Data Desa <i class='fa fa-angle-down'></i></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="">Data Penduduk</a></li>
-                        <li><a href="#">Data Pendidikan Ditempuh</a></li>
-                        <li><a href="#">Data Pekerjaan</a></li>
-                        <li><a href="#">Data Jenis Kelamin</a></li>
-                        <li><a href="#">Data Kelompok Umur</a></li>
-                        <li><a href="#">Data Perkawinan</a></li>
-                    </ul>
-                </li>
+                <li class='$item[status]'><a href="<?= base_url('penduduk/data_penduduk') ?>">Data Penduduk</a></li>
                 <li class='$item[status]'><a href="<?= base_url('loginadmin/user') ?>">Login Penduduk</a></li>
                 <li class='hidden-xs'><a href='javascript:void(0)' id='btnSearch' class=""><i class='fa fa-search'></i></a></li>
             </ul>

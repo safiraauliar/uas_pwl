@@ -1,11 +1,11 @@
 <div class="login-box">
     <div class="login-logo">
-        <a href="../../index2.html"><b>Login Penduduk</b></a>
+        <a href="<?= base_url('beranda') ?>"><b> Beranda</b></a>
     </div>
     <!-- /.login-logo -->
     <div class="card">
         <div class="card-body login-card-body">
-            <p class="login-box-msg">Sign in to start your session</p>
+            <p class="login-box-msg">Login Penduduk</p>
             <?php
             if (!empty(session()->getFlashdata('success'))) { ?>
                 <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -24,7 +24,7 @@
                     </button>
                 </div>
             <?php } ?>
-            <?= form_open('loginuser') ?>
+            <?= form_open('loginadmin/login_user') ?>
             <div class="input-group mb-3">
                 <input type="text" class="form-control" id="email" name="email" placeholder="Email">
                 <div class="input-group-append">
@@ -60,7 +60,7 @@
                 <a href="forgot-password.html">I forgot my password</a>
             </p>
             <p class="mb-0">
-                <a href="<?= base_url('admin/registrasi'); ?>" class="text-center">Register a new membership</a>
+                <a href="<?= base_url('user'); ?>" class="text-center">Register a new membership</a>
             </p>
         </div>
     </div>

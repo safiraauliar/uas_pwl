@@ -3,7 +3,7 @@
 namespace App\Controllers;
 
 use CodeIgniter\Controller;
-// use App\Models\SuratModel;
+use App\Models\SuratModel;
 use App\Libraries\Pdfgenerator;
 
 class Surat extends BaseController
@@ -13,15 +13,39 @@ class Surat extends BaseController
 
     public function __construct()
     {
-        // $this->model = new SuratModel();
+        $this->model = new SuratModel();
         $this->pdf = new Pdfgenerator;
     }
     public function index()
     {
         $data = [
             'title' => 'List Data Surat',
-            // 'surat' => $this->model->get_surat(),
             'content' => 'kelola_surat/surat'
+        ];
+        echo view('layouts/wrapper_user', $data);
+    }
+    public function template_surat()
+    {
+        $data = [
+            'title' => 'List Data Surat',
+            'content' => 'kelola_surat/template_surat'
+        ];
+        echo view('layouts/wrapper', $data);
+    }
+    public function surat_masuk()
+    {
+        $data = [
+            'title' => ' Data Permintaan Surat Masuk',
+            'surat' => $this->model->get_surat(),
+            'content' => 'kelola_surat/surat_masuk'
+        ];
+        echo view('layouts/wrapper', $data);
+    }
+    public function download_surat()
+    {
+        $data = [
+            'title' => 'List Data Surat',
+            'content' => 'kelola_surat/download_surat'
         ];
         echo view('layouts/wrapper_user', $data);
     }
@@ -38,8 +62,8 @@ class Surat extends BaseController
         $data = [
             'nik' => $this->request->getPost('nik'),
             'nama' => $this->request->getPost('nama'),
-            'email' => $this->request->getPost('email'),
-            'jen_surat' => $this->request->getPost('jen_surat'),
+            'no_hp' => $this->request->getPost('no_hp'),
+            'jenis_surat' => $this->request->getPost('jenis_surat'),
             'pesan' => $this->request->getPost('pesan'),
 
         ];
@@ -62,16 +86,22 @@ class Surat extends BaseController
         $data = [
             'nik' => $this->request->getPost('nik'),
             'nama' => $this->request->getPost('nama'),
-            'email' => $this->request->getPost('email'),
-            'jen_surat' => $this->request->getPost('jen_surat'),
+            'no_hp' => $this->request->getPost('no_hp'),
+            'jenis_surat' => $this->request->getPost('jenis_surat'),
             'pesan' => $this->request->getPost('pesan'),
 
         ];
-        $this->model->insert_surat($data);
+        $this->model->insert_surat($data, $nik);
         session()->setFlashdata('success', 'Data Surat berhasil ditambahkan');
         return redirect()->to(base_url('surat'));
     }
     public function delete($nik)
+    {
+        $this->model->delete_surat($nik);
+        session()->setFlashdata('success', 'Data Surat berhasil dihapus');
+        return redirect()->to(base_url('surat/surat_masuk'));
+    }
+    public function delete_user($nik)
     {
         $this->model->delete_surat($nik);
         session()->setFlashdata('success', 'Data Surat berhasil dihapus');
@@ -82,12 +112,5 @@ class Surat extends BaseController
         $data['surat'] = $this->model->get_surat();
         $view = view('surat/pdf', $data);
         $this->pdf->generate($view, 'Pengajuan Surat', true, 'a4', 'potrait');
-    }
-    public function excel()
-    {
-        $data['surat'] = $this->model->get_surat();
-        header("Content-type= application/vnd-ms-excel");
-        header("Content-Disposition: attachment; filename= surat.xls");
-        return view('surat/excel', $data);
     }
 }

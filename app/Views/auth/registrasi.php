@@ -7,7 +7,7 @@
         <div class="card-body register-card-body">
             <p class="login-box-msg">Register a new membership</p>
 
-            <form action="<?= base_url('admin/registrasi') ?>" method="post">
+            <form action="<?= base_url('user/registrasi') ?>" method="post">
                 <div class="row">
                     <div class="input-group mb-3">
                         <input type="text" class="form-control" id="fullname" name="fullname" placeholder="Full name" required>
@@ -26,7 +26,7 @@
                         </div>
                     </div>
                     <div class="input-group mb-3">
-                        <input type="password" class="form-control" id="password" name="password" placeholder="Password" required>
+                        <input type="password" class="form-control" id="password" name="password" placeholder="Password minimal 6 karakter" required>
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-lock"></span>

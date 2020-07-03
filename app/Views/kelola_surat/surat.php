@@ -44,15 +44,15 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="form_name">Nama *</label>
-                                        <input id="form_name" type="text" name="name" class="form-control" placeholder="Silahkan masukkan nama anda *" required="required" data-error="Nama harus diisi!.">
+                                        <label for="nama">Nama *</label>
+                                        <input id="nama" type="text" name="nama" class="form-control" placeholder="Silahkan masukkan nama anda *" required="required" data-error="Nama harus diisi!.">
                                         <div class="help-block with-errors"></div>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="form_lastname">NIK *</label>
-                                        <input id="form_lastname" type="text" name="nik" class="form-control" placeholder="Silahkan masukkan NIK anda *" required="required" data-error="NIK Harus diisi!.">
+                                        <label for="nik">NIK *</label>
+                                        <input id="nik" type="text" name="nik" class="form-control" placeholder="Silahkan masukkan NIK anda *" required="required" data-error="NIK Harus diisi!.">
                                         <div class="help-block with-errors"></div>
                                     </div>
                                 </div>
@@ -60,15 +60,15 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="form_email">Email *</label>
-                                        <input id="form_email" type="email" name="email" class="form-control" placeholder="Silahkan masukkan email anda *" required="required" data-error="Format email salah.">
+                                        <label for="no_hp">No HP *</label>
+                                        <input id="no_hp" type="text" name="no_hp" class="form-control" placeholder="Silahkan masukkan No. HP anda *" required="required" data-error="Format email salah.">
                                         <div class="help-block with-errors"></div>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="form_need">Pilih Jenis Surat *</label>
-                                        <select id="form_need" name="keperluan" class="form-control" required="required" data-error="Pilih jenis surat yang anda perlukan">
+                                        <label for="jenis_surat">Pilih Jenis Surat *</label>
+                                        <select id="jenis_surat" name="jenis_surat" class="form-control" required="required" data-error="Pilih jenis surat yang anda perlukan">
                                             <option value=""></option>
                                             <option value="Surat Keterangan Usaha">Surat Keterangan Usaha</option>
                                             <option value="Surat Keterangan Tidak Mampu">Surat Keterangan Tidak Mampu</option>
@@ -87,8 +87,8 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <label for="form_message">Pesan *</label>
-                                        <textarea id="form_message" name="message" class="form-control" placeholder="Silahkan isi keperluan atau keterangan lainnya disini *" rows="4" required="required" data-error="Silahkan isi pesan atau keterangan anda."></textarea>
+                                        <label for="pesan">Pesan *</label>
+                                        <textarea id="pesan" name="pesan" class="form-control" placeholder="Silahkan isi keperluan atau keterangan lainnya disini *" rows="4" required="required" data-error="Silahkan isi pesan atau keterangan anda."></textarea>
                                         <div class="help-block with-errors"></div>
                                     </div>
                                 </div>
@@ -104,6 +104,9 @@
                                 <div class="col-md-12">
                                     <p class="text-muted">
                                         <strong>*</strong> Harus diisi
+                                    </p>
+                                    <p class="text-muted">
+                                        <strong>*</strong> Jika Surat Sudah Jadi saudara akan diberi tahu melalui SMS
                                     </p>
                                 </div>
                             </div>

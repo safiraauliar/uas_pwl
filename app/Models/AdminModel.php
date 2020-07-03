@@ -8,6 +8,9 @@ use CodeIgniter\Model;
 
 class AdminModel extends Model
 {
+    // protected $table = 'users';
+    // protected $primarykey = 'id';
+    // protected $allowedFields = ['fullname', 'email', 'password', 'photo', 'level'];
 
     public function get_admin()
     {
