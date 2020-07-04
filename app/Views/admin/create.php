@@ -46,6 +46,9 @@
                                 </div>
                                 <div class="col-md-10">
                                     <input type="file" class="form-control" name="photo" id="photo" required>
+                                    <p class="text-muted">
+                                        <strong>*</strong>format yang didukung jpg,jpeg,png
+                                    </p>
                                 </div>
                             </div>
                         </div>

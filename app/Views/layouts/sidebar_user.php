@@ -46,7 +46,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a href="<?= base_url('surat/download_surat') ?>" class="nav-link">
+              <a href="<?= base_url('files/download_surat') ?>" class="nav-link">
                 <i class="fa fa-download nav-icon"></i>
                 <p>Download Surat</p>
               </a>

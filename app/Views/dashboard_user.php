@@ -32,6 +32,7 @@
               <h3 class="profile-username text-center"><?= session()->get('fullname') ?></h3>
 
               <p class="text-muted text-center">User</p>
+              <input type="file" class="form-control" name="gambar" id="gambar" required>
               <a href="#" class="btn btn-primary btn-block"><b>Ganti Foto</b></a>
             </div>
             <!-- /.card-body -->
@@ -44,11 +45,11 @@
             <div class="card-body">
               <div class="tab-content">
 
-                <form class="form-horizontal">
+                <form class="form-horizontal" action="<?= base_url('admin/update/' . $users['id']) ?>">
                   <div class="form-group row">
                     <label for="inputName" class="col-sm-2 col-form-label">Nama</label>
                     <div class="col-sm-10">
-                      <input type="email" class="form-control" id="inputName" value="<?= session()->get('fullname') ?>">
+                      <input type="text" class="form-control" id="inputName" value="<?= session()->get('fullname') ?>">
                     </div>
                   </div>
                   <div class="form-group row">
@@ -66,13 +67,13 @@
                   <div class="form-group row">
                     <label for="inputExperience" class="col-sm-2 col-form-label">Tempat, Tanggal Lahir</label>
                     <div class="col-sm-10">
-                      <textarea class="form-control" id="inputExperience" placeholder="Experience"></textarea>
+                      <textarea class="form-control" id="inputExperience" placeholder="Tempat, Tanggal Lahir"></textarea>
                     </div>
                   </div>
                   <div class="form-group row">
                     <label for="inputSkills" class="col-sm-2 col-form-label">Pekerjaan</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" id="inputSkills" placeholder="Skills">
+                      <input type="text" class="form-control" id="inputSkills" placeholder="ex: Mahasiswa">
                     </div>
                   </div>
                   <div class="form-group row">

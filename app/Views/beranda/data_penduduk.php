@@ -18,14 +18,14 @@
                             <table id="example1" class="table table-bordered table-striped">
                                 <thead>
                                     <tr>
-                                        <th>No</th>
-                                        <th>Nama</th>
-                                        <th>TTL</th>
-                                        <th>Jenis Kelamin</th>
-                                        <th>Alamat</th>
-                                        <th>Agama</th>
-                                        <th>Status</th>
-                                        <th>Pekerjaan</th>
+                                        <th style="text-align: center">No</th>
+                                        <th style="text-align: center">Nama</th>
+                                        <th style="text-align: center">Tempat, Tanggal Lahir</th>
+                                        <th style="text-align: center">Jenis Kelamin</th>
+                                        <th style="text-align: center">Alamat</th>
+                                        <th style="text-align: center">Agama</th>
+                                        <th style="text-align: center">Status</th>
+                                        <th style="text-align: center">Pekerjaan</th>
                                     </tr>
                                 </thead>
                                 <tbody>

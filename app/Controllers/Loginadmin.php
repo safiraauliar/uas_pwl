@@ -36,7 +36,13 @@ class Loginadmin extends BaseController
             session()->set('email', $admin['email']);
             session()->set('fullname', $admin['fullname']);
             session()->set('photo', $admin['photo']);
-            return redirect()->to(base_url('dashboard'));
+            session()->set('level', $admin['level']);
+            if (session()->get('level') == 1) {
+                return redirect()->to(base_url('dashboard'));
+            } else {
+                session()->setFlashdata('gagal', 'login hanya untuk user yang telah terdaftar');
+                return redirect()->to(base_url('loginadmin'));
+            }
         } else {
             ///user atau password salah
             session()->setFlashdata('gagal', 'email atau pasword salah');
@@ -68,7 +74,13 @@ class Loginadmin extends BaseController
             session()->set('email', $admin['email']);
             session()->set('fullname', $admin['fullname']);
             session()->set('photo', $admin['photo']);
-            return redirect()->to(base_url('dashboarduser'));
+            session()->set('level', $admin['level']);
+            if (session()->get('level') == 0) {
+                return redirect()->to(base_url('dashboarduser'));
+            } else {
+                session()->setFlashdata('gagal', 'login hanya untuk user yang telah terdaftar');
+                return redirect()->to(base_url('loginadmin/user'));
+            }
         } else {
             ///user atau password salah
             session()->setFlashdata('gagal', 'email atau pasword salah');

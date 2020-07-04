@@ -9,7 +9,7 @@
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item active">Files</li>
+                        <li class="breadcrumb-item active">Surat Masuk</li>
                     </ol>
                 </div>
             </div>
@@ -17,15 +17,7 @@
     </section>
 
     <section class="content">
-        <div class="container-fluid">
-            <div class="row mb-2">
-                <div class="col-sm-12 float-sm-right">
-                    <div class="float-sm-right">
-                        <a href="<?= base_url('files/tambah') ?>" class="btn btn-primary"> <i class="fa fa-plus"></i> Tambah</a>
-                    </div>
-                </div>
-            </div>
-        </div>
+
         <div class="card">
             <?php
             if (!empty(session()->getFlashdata('success'))) { ?>
@@ -42,26 +34,20 @@
                     <thead>
                         <tr>
                             <th>No</th>
-                            <th>Judul</th>
-                            <th>Deskripsi</th>
-                            <th>Tanggal Upload</th>
-                            <th>Oleh</th>
-                            <th>File Surat</th>
+                            <th>Jenis Surat</th>
+                            <th>Pesan</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php $no = 1;
-                        foreach ($files as $key => $data) { ?>
+                        foreach ($surat as $key => $data) { ?>
                             <td><?= $no++; ?></td>
-                            <td><?= $data['file_judul'] ?></td>
-                            <td><?= $data['file_deskripsi'] ?></td>
-                            <td><?= $data['file_tgl'] ?></td>
-                            <td><?= $data['file_oleh'] ?></td>
-                            <td><?= $data['file_data'] ?></td>
+                            <td><?= $data['jenis_surat'] ?></td>
+                            <td><?= $data['pesan'] ?></td>
                             <td>
-                                <a href="<?= base_url('files/edit/' . $data['id']) ?>" class="btn btn-warning btn-xs"><i class="fa fa-edit"></i></a>
-                                <a href="<?= base_url('files/delete/' . $data['id']) ?>" class="btn btn-danger btn-xs" onClick="return confirm('Apakah anda yakin ingin menghapus data?')"><i class="fa fa-trash"></i></a>
+                                <a href="<?= base_url('surat/edit/' . $data['id']) ?>" class="btn btn-warning btn-xs"><i class="fa fa-edit"></i></a>
+                                <a href="<?= base_url('surat/delete_user/' . $data['id']) ?>" class="btn btn-danger btn-xs" onClick="return confirm('Apakah anda yakin ingin menghapus data?')"><i class="fa fa-trash"></i></a>
                             </td>
                             </tr>
                         <?php } ?>

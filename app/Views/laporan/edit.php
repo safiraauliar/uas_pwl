@@ -67,6 +67,8 @@
                             </div>
                             <div class="col-md-6">
                                 <input type="submit" class="btn btn-success btn-send" value="Kirim Permohonan">
+                                <a href="<?= base_url('laporan/display_laporan') ?>" id="cancel" name="cancel" class="btn btn-default">Cancle</a>
+
                             </div>
                             <!-- <div class="col-md-6">
                                     <input type="button" class="btn btn-primary btn-send" value="Kembali" onclick="window.history.back()" />

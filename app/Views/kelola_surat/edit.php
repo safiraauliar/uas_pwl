@@ -25,7 +25,7 @@
                                     <label for="file_deskripsi">Deskripsi</label>
                                 </div>
                                 <div class="col-md-10">
-                                    <textarea type="text" class="form-control" value="<?= $files['file_deskripsi'] ?>" name="file_deskripsi" id="file_deskripsi" placeholder="Deskripsi file" rows="5" cols="50" required></textarea>
+                                    <input type="text" class="form-control" value="<?= $files['file_deskripsi'] ?>" name="file_deskripsi" id="file_deskripsi" placeholder="Deskripsi file" rows="5" cols="50" required></input>
                                 </div>
                             </div>
                         </div>
@@ -55,7 +55,7 @@
                                     <label for="file_data">File</label>
                                 </div>
                                 <div class="col-md-10">
-                                    <input type="file" class="form-control" name="file_data" value="<?= $files['file_data'] ?>" id="file_data" required>
+                                    <input type="file" class="form-control" name="file_data" value="<?= $files['file_data'] ?>" id="file_data">
                                 </div>
                             </div>
                         </div>

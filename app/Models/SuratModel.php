@@ -16,16 +16,16 @@ class SuratModel extends Model
     {
         return $this->db->table('surat')->insert($data);
     }
-    public function edit_surat($nik)
+    public function edit_surat($id)
     {
-        return $this->db->table('surat')->where('nik', $nik)->get()->getRowArray();
+        return $this->db->table('surat')->where('id', $id)->get()->getRowArray();
     }
-    public function update_surat($data, $nik)
+    public function update_surat($data, $id)
     {
-        return $this->db->table('surat')->update($data, array('nik' => $nik));
+        return $this->db->table('surat')->update($data, array('id' => $id));
     }
-    public function delete_surat($nik)
+    public function delete_surat($id)
     {
-        return $this->db->table('surat')->delete(array('nik' => $nik));
+        return $this->db->table('surat')->delete(array('id' => $id));
     }
 }

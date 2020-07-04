@@ -41,9 +41,10 @@ class Files extends BaseController
             return redirect()->to(base_url('files/tambah'));
         }
         $validated = $this->validate([
-            'file_data' => 'uploaded[file_data]|max_size[file_data, 5000]'
+            'file_data' => 'uploaded[file_data]|mime_in[file_data,application/pdf,application/doc,application/docx,application/xls]|max_size[file_data, 5000]'
         ]);
         if ($validated == FALSE) {
+            session()->setFlashdata('gagal', 'Data File gagal ditambahkan, format file salah');
             return redirect()->to(base_url('files/tambah'));
         } else {
             $file_data = $this->request->getFile('file_data');
@@ -73,25 +74,26 @@ class Files extends BaseController
     public function update($id)
     {
         if ($this->request->getMethod() !== 'post') {
-            return redirect()->to(base_url('files/tambah'));
+            return redirect()->to(base_url('files/edit'));
         }
         $validated = $this->validate([
-            'file_data' => 'uploaded[file_data]|max_size[gambar, 5000]'
+            'file_data' => 'uploaded[file_data]|mime_in[file_data,application/pdf,application/doc,application/docx,application/xls]|max_size[file_data, 5000]'
         ]);
         if ($validated == FALSE) {
-            return redirect()->to(base_url('files/tambah'));
+            session()->setFlashdata('gagal', 'Data File gagal ditambahkan, format file salah');
+            return redirect()->to(base_url('files/edit'));
         } else {
-            $file_gambar = $this->request->getFile('file_data');
-            $file_gambar->move(ROOTPATH . 'public/File_upload');
+            $file_data = $this->request->getFile('file_data');
+            $file_data->move(ROOTPATH . 'public/File_upload');
             $data = [
                 'file_judul' => $this->request->getPost('file_judul'),
                 'file_deskripsi' => $this->request->getPost('file_deskripsi'),
                 'file_tgl' => $this->request->getPost('file_tgl'),
-                'file_oleh' => $this->request->getPost('file_tgl'),
-                'file_data' => $file_gambar->getName(),
+                'file_oleh' => $this->request->getPost('file_oleh'),
+                'file_data' => $file_data->getName(),
             ];
         }
-        $this->model->insert_files($data, $id);
+        $this->model->insert_files($id, $data);
         session()->setFlashdata('success', 'Data Berita berhasil ditambahkan');
         return redirect()->to(base_url('files'));
     }
@@ -100,5 +102,25 @@ class Files extends BaseController
         $this->model->delete_files($id);
         session()->setFlashdata('success', 'Data Berita berhasil dihapus');
         return redirect()->to(base_url('files'));
+    }
+    public function get_file($id)
+    {
+        // $id = $this->uri->segment(3);
+        $get_db = $this->model->get_files($id);
+        $q = $get_db->getRowArray();
+        $file = $q['file_data'];
+        $path = './public/File_upload/' . $file;
+        $data =  file_get_contents($path);
+        $name = $data->getName();
+        return $this->response->download($name, $data);
+    }
+    public function download_surat()
+    {
+        $data = [
+            'title' => 'List Data Surat',
+            'files' => $this->model->get_files(),
+            'content' => 'kelola_surat/download_surat'
+        ];
+        echo view('layouts/wrapper_user', $data);
     }
 }

@@ -9,7 +9,7 @@
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item active">Berita</li>
+                        <li class="breadcrumb-item active">Laporan Warga</li>
                     </ol>
                 </div>
             </div>
@@ -17,7 +17,20 @@
     </section>
 
     <section class="content">
-
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                </div>
+                <div class="col-sm-6 float-sm-right">
+                    <div class="float-sm-right ml-2">
+                        <a href="<?= base_url('laporan/pdf') ?>" class="btn btn-danger"><i class="fa fa-print"></i>PDF</a>
+                    </div>
+                    <div class="float-sm-right">
+                        <a href="<?= base_url('laporan/excel') ?>" class="btn btn-success"><i class="fa fa-file-excel"></i> Excel</a>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="card">
             <?php
             if (!empty(session()->getFlashdata('success'))) { ?>

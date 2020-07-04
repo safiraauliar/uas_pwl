@@ -52,7 +52,7 @@
                             <td><?= $data['jenis_surat'] ?></td>
                             <td><?= $data['pesan'] ?></td>
                             <td>
-                                <a href="<?= base_url('surat/delete/' . $data['nik']) ?>" class="btn btn-danger btn-xs" onClick="return confirm('Apakah anda yakin ingin menghapus data?')"><i class="fa fa-trash"></i></a>
+                                <a href="<?= base_url('surat/delete/' . $data['id']) ?>" class="btn btn-danger btn-xs" onClick="return confirm('Apakah anda yakin ingin menghapus data?')"><i class="fa fa-trash"></i></a>
                             </td>
                             </tr>
                         <?php } ?>

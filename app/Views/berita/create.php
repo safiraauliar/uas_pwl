@@ -55,6 +55,9 @@
                                 <div class="col-md-2">
                                 </div>
                                 <div class="col-md-10">
+                                    <p class="text-muted">
+                                        <strong>*</strong>format yang didukung jpg,jpeg,png,gif
+                                    </p>
                                     <button type="submit" class="btn btn-primary">Submit</button>
                                     <a href="<?= base_url('berita/index') ?>" id="cancel" name="cancel" class="btn btn-default">Cancel</a>
                                 </div>

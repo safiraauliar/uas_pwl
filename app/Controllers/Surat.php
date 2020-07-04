@@ -41,14 +41,16 @@ class Surat extends BaseController
         ];
         echo view('layouts/wrapper', $data);
     }
-    public function download_surat()
+    public function display_permohonan()
     {
         $data = [
-            'title' => 'List Data Surat',
-            'content' => 'kelola_surat/download_surat'
+            'title' => ' Permohonan Yang dikirim',
+            'surat' => $this->model->get_surat(),
+            'content' => 'kelola_surat/display_permohonan'
         ];
         echo view('layouts/wrapper_user', $data);
     }
+
     public function tambah()
     {
         $data = [
@@ -69,19 +71,19 @@ class Surat extends BaseController
         ];
         $this->model->insert_surat($data);
         session()->setFlashdata('success', 'Data Surat berhasil ditambahkan');
-        return redirect()->to(base_url('surat'));
+        return redirect()->to(base_url('surat/display_permohonan'));
     }
-    public function edit($nik)
+    public function edit($id)
     {
         $data = [
-            'title' => 'Edit Data Surat',
-            'surat' => $this->model->edit_surat($nik),
-            'content' => 'surat/edit'
+            'title' => 'Edit Data Permohonan Surat',
+            'surat' => $this->model->edit_surat($id),
+            'content' => 'kelola_surat/edit_permohonan'
         ];
-        echo view('layouts/wrapper', $data);
+        echo view('layouts/wrapper_user', $data);
     }
 
-    public function update($nik)
+    public function update($id)
     {
         $data = [
             'nik' => $this->request->getPost('nik'),
@@ -89,23 +91,23 @@ class Surat extends BaseController
             'no_hp' => $this->request->getPost('no_hp'),
             'jenis_surat' => $this->request->getPost('jenis_surat'),
             'pesan' => $this->request->getPost('pesan'),
-
         ];
-        $this->model->insert_surat($data, $nik);
-        session()->setFlashdata('success', 'Data Surat berhasil ditambahkan');
-        return redirect()->to(base_url('surat'));
+        $this->model->update_surat($data, $id);
+        session()->setFlashdata('success', 'Data Penduduk berhasil diupdate');
+        return redirect()->to(base_url('surat/display_permohonan'));
     }
-    public function delete($nik)
+
+    public function delete($id)
     {
-        $this->model->delete_surat($nik);
+        $this->model->delete_surat($id);
         session()->setFlashdata('success', 'Data Surat berhasil dihapus');
         return redirect()->to(base_url('surat/surat_masuk'));
     }
-    public function delete_user($nik)
+    public function delete_user($id)
     {
-        $this->model->delete_surat($nik);
+        $this->model->delete_surat($id);
         session()->setFlashdata('success', 'Data Surat berhasil dihapus');
-        return redirect()->to(base_url('surat'));
+        return redirect()->to(base_url('surat/display_permohonan'));
     }
     public function pdf()
     {

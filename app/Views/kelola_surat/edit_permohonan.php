@@ -35,7 +35,7 @@
                     <p class="lead">Silahkan lengkapi semua isian sesuai dengan data yang diperlukan</p>
 
 
-                    <form id="contact-form" method="post" action="<?= base_url('surat/save') ?>" role="form">
+                    <form action="<?= base_url('surat/update/' . $surat['id']); ?>" method="post">
 
                         <div class="messages"></div>
 
@@ -45,14 +45,14 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="nama">Nama *</label>
-                                        <input id="nama" type="text" name="nama" class="form-control" placeholder="Silahkan masukkan nama anda *" required="required" data-error="Nama harus diisi!.">
+                                        <input id="nama" type="text" name="nama" class="form-control" value="<?= $surat['nama'] ?>">
                                         <div class="help-block with-errors"></div>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="nik">NIK *</label>
-                                        <input id="nik" type="text" name="nik" class="form-control" placeholder="Silahkan masukkan NIK anda *" required="required" data-error="NIK Harus diisi!.">
+                                        <input id="nik" type="text" name="nik" class="form-control" value="<?= $surat['nik'] ?>">
                                         <div class="help-block with-errors"></div>
                                     </div>
                                 </div>
@@ -61,14 +61,14 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="no_hp">No HP *</label>
-                                        <input id="no_hp" type="text" name="no_hp" class="form-control" placeholder="Silahkan masukkan No. HP anda *" required="required" data-error="Format email salah.">
+                                        <input id="no_hp" type="text" name="no_hp" class="form-control" value="<?= $surat['no_hp'] ?>">
                                         <div class="help-block with-errors"></div>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="jenis_surat">Pilih Jenis Surat *</label>
-                                        <select id="jenis_surat" name="jenis_surat" class="form-control" required="required" data-error="Pilih jenis surat yang anda perlukan">
+                                        <select id="jenis_surat" name="jenis_surat" class="form-control" value="<?= $surat['jenis_surat'] ?>">
                                             <option value=""></option>
                                             <option value="Surat Keterangan Usaha">Surat Keterangan Usaha</option>
                                             <option value="Surat Keterangan Tidak Mampu">Surat Keterangan Tidak Mampu</option>
@@ -88,13 +88,13 @@
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label for="pesan">Pesan *</label>
-                                        <textarea id="pesan" name="pesan" class="form-control" placeholder="Silahkan isi keperluan atau keterangan lainnya disini *" rows="4" required="required" data-error="Silahkan isi pesan atau keterangan anda."></textarea>
+                                        <input id="pesan" name="pesan" class="form-control" value="<?= $surat['pesan'] ?>"></input>
                                         <div class="help-block with-errors"></div>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <input type="submit" class="btn btn-success btn-send" value="Kirim Permohonan">
-                                    <a href="<?= base_url('surat/display_permohonan') ?>" id="cancel" name="cancel" class="btn btn-primary">Tampilkan permohonan</a>
+                                    <input type="submit" class="btn btn-success btn-send" value="Update">
+                                    <a href="<?= base_url('surat/display_permohonan') ?>" id="cancel" name="cancel" class="btn btn-default">Cancle</a>
 
                                 </div>
                                 <!-- <div class="col-md-6">

@@ -4,14 +4,17 @@ namespace App\Controllers;
 
 use CodeIgniter\Controller;
 use App\Models\LaporanModel;
+use App\Libraries\Pdfgenerator;
+
 
 class Laporan extends BaseController
 {
     protected $model;
-
+    protected $pdf;
     public function __construct()
     {
         $this->model = new LaporanModel();
+        $this->pdf = new Pdfgenerator;
     }
     public function index()
     {
@@ -95,6 +98,13 @@ class Laporan extends BaseController
     {
         $data['laporan'] = $this->model->get_laporan();
         $view = view('laporan/pdf', $data);
-        $this->pdf->generate($view, 'Laporan Penduduk', true, 'a4', 'potrait');
+        $this->pdf->generate($view, 'Laporan Warga', true, 'a4', 'potrait');
+    }
+    public function excel()
+    {
+        $data['laporan'] = $this->model->get_laporan();
+        header("Content-type= application/vnd-ms-excel");
+        header("Content-Disposition: attachment; filename= Data Laporan warga.xls");
+        return view('laporan/excel', $data);
     }
 }
